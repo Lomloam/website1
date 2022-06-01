@@ -1,0 +1,95 @@
+
+<html>
+    <head>
+        <title>Main Page</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        />  
+
+
+    </head>
+    <body style="background-color: rgb(35, 35, 35);">
+        <ul>
+            <li><a href="/"><b>Home</b></a></li>
+            <li  id="otherDropdown"><a href="#"><b>Games</b></a></li>
+            <li style="float: right;"><a href="/logout"><b>Logout</b></a></li>
+           </ul>
+
+           <h1 style="font-size: 100px; left: 3%; top: 6%; position: absolute;">Hello,<br> Welcome to my website.</h1>
+           
+            {% with messages = get_flashed_messages(with_categories=true) %} {% if
+            messages %} {% for category, message in messages %} {% if category ==
+            'success' %}
+            <div id="alertDiv" class="alert success" role="alert">
+              {{ message }}
+            </div>
+            <div id="closeBut" class="nav-cancel is-active thingy" id="nav-cancel">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+            </div>
+            {% elif category == 'error' %}
+            <div id="alertDiv" class="alert error" role="alert">
+              {{ message }}
+              
+            </div>
+            <div id="closeBut" class="nav-cancel is-active thingy" id="nav-cancel">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+            </div>
+            {% endif %} {% endfor %} {% endif %} {% endwith %}
+                        
+                   <!-- Slideshow container -->
+            <div class="slideshow-container" style="width: 50%; height: 40%; position: absolute; left: 25%; top: 50%;">
+
+              <!-- Full-width images with number and caption text -->
+              <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img class="thingImage" src="../static/Assets/maze.PNG">
+                <a href="/maze"><div class="slideButton" style="position: absolute; top: 105%; left: 42.5%; background-color: white; color: rgb(35, 35, 35);">Visit</div> </a>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img class="thingImage" src="../static/Assets/shapes.PNG">
+                <a href="/shapes"><div class="slideButton" style="position: absolute; top: 105%; left: 42.5%; background-color: white; color: rgb(35, 35, 35);">Visit</div> </a>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img class="thingImage" src="../static/Assets/sorts.PNG">
+                <a href="/sorts"><div class="slideButton" style="position: absolute; top: 105%; left: 42.5%; background-color: white; color: rgb(35, 35, 35);">Visit</div> </a>
+              </div>
+
+              <!-- Next and previous buttons -->
+              <a class="previous" style="left: 4%; line-height: 60px;" onclick="plusSlides(-1)"><h1 style="font-size: 30px;">&#10094;</h1></a>
+              <a class="next" style="left: 91%; line-height: 60px;" onclick="plusSlides(1)"><h1 style="font-size: 30px;">&#10095;</h1></a>
+            </div>
+            <br>
+
+
+            <div id="dropdown" class="dropdown">
+              <div class="dropdown-content">
+                <a href="/maze">Maze Builder</a>
+                <a href="/sorts">Search Algorithm Visualizer</a>
+                <a href="/shapes">Fractal Shapes</a>
+              </div>
+            </div>
+
+          <script
+            type="text/javascript"
+            src="{{ url_for('static', filename='index.js') }}"></script>
+
+    </body>
+</html> 
+
+
+
+

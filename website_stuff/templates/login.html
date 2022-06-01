@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        crossorigin="anonymous"
+      />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'success' %}
+        <div id="alertDiv" class="alert success" role="alert">
+          {{ message }}
+        </div>
+        <div id="closeBut" class="nav-cancel is-active thingy" id="nav-cancel">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+        </div>
+        {% else %}
+        <div id="alertDiv" class="alert error" role="alert">
+          {{ message }}
+          
+        </div>
+        <div id="closeBut" class="nav-cancel is-active thingy" id="nav-cancel">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+        </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+      
+        <body>
+            <form method="POST" style="align-items: center; width: 50%; left: 25%; top: 15%; position: absolute;">
+              <h3 style="font-family: 'Fredoka', sans-serif;" align="center">Login</h3><br>
+              <div align="center" style="font-family: 'Fredoka', sans-serif;"> 
+                <label for="email">Email Address</label><br>
+                <input type="email" id="email" name="email" placeholder="someone@example.com"><br><br>
+               
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" placeholder="1234..."><br><br>
+               
+                <button class="submitButton" type="submit">Submit</button>
+              </div>
+             
+      
+            </form>
+
+      <ul>
+        <li><a href="/login"><b>Login</b></a></li>
+        <li><a href="/sign-up" id="otherDropdown"><b>Signup</b></a></li>     
+       </ul>
+
+       <div class="borderThing"></div>
+           
+    
+
+
+        <script
+            type="text/javascript"
+            src="{{ url_for('static', filename='index.js') }}"></script>
+
+    </body>
+</html>

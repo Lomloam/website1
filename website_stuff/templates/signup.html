@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Signup</title>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+      />
+      
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>  
+      <form align="center" method="POST" style="align-items: center; width: 50%; left: 25%; top: 15%; position: absolute;">
+        <h3 align="center">Signup Form</h3><br>
+        <label for="email">Email Address</label><br>
+        <input type="email" id="email" name="email" placeholder="johndoe@email.com"><br><br>
+        <label for="firstName">First Name</label><br>
+        <input type="firstName" id="firstName" name="firstName" placeholder="John"><br><Br>
+        <label for="pass1">Password</label><br>
+        <input type="password" id="pass1" name="pass1" placeholder="Enter Password"><br><br>
+        <label for="pass2">Confirm Password</label><br>
+        <input type="password" id="pass2" name="pass2" placeholder="Confirm Password"><br><Br>
+        <button class="submitButton" type="submit">Submit</button>
+
+      </form>
+      
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %} {% if category ==
+        'error' %}
+        <div id="alertDiv" class="alert error" role="alert">
+          {{ message }}
+        </div>
+        <div id="closeBut" class="nav-cancel is-active thingy" id="nav-cancel">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+        </div>
+        {% else %}
+        <div id="alertDiv" class="alert success" role="alert">
+          {{ message }}
+          
+        </div>
+        <div id="closeBut" class="nav-cancel is-active thingy" id="nav-cancel">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+        </div>
+        {% endif %} {% endfor %} {% endif %} {% endwith %}
+      
+      
+        <ul>
+        <li><a href="/login"><b>Login</b></a></li>
+      <li><a href="/sign-up" id="otherDropdown"><b>Signup</b></a></li>     
+       </ul>
+   
+        <script
+            type="text/javascript"
+            src="{{ url_for('static', filename='index.js') }}"></script>
+            
+         
+          
+         
+    </body>
+</html>

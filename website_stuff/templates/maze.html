@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Maze</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='maze.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+    </head>
+    <body>
+       
+        <!--back button-->    
+        <a href="/">
+            <div id="back" class="btn btn-three" style="  line-height: 35px; height: 35; width: 110;">
+             Back  
+         </div> </a> 
+         <!--start button-->
+         <div id="start" class="btn btn-three" style="  line-height: 50px; height: 50; width: 150; left: 20;">
+            Start  
+        </div>
+        
+    <!--Dropdown(just a test for now, no actual selections)-->
+       <div class="dropdown">
+          <button id="dropButton" class="dropbtn">Sort Type</button>
+          <div id="droppa" class="dropdown-content">
+                <option id="option1" value="bfs">Breadth First</option>
+                <option id="option2" value="dfs">Depth First</option>
+                <option id="option3" value="3">Stuff</option>     
+          </div>
+        </div>  
+        
+        <!--switch button-->
+        <div id="switch" class="btn btn-three" style=" position: absolute; line-height: 50px; height: 50; width: 150; left: 380 ;">
+            Drawing  
+        </div>
+        <canvas id="mazeCanvas"></canvas>
+        <div id="instructions" class="center-screen">
+            <br>Welcome to the Maze Builder!<br><br> Click and drag the red square(target) to move it around.<br><br> You can draw the maze by clicking and dragging around the canvas.<br><br>If you would like to change the search agorithm used to find the target, use the dropdown menu at the top! 
+            
+            
+        </div>
+        <div id="meow" class="btn stuff btn-three" style="  line-height: 50px; position: absolute;">
+            Start  
+        </div>
+        
+        <script
+            type="text/javascript"
+            src="{{ url_for('static', filename='maze.js') }}"></script>
+      
+    </body>
+</html>

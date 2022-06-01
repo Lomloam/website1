@@ -1,0 +1,130 @@
+h1{
+    font-family: 'Fredoka', sans-serif;
+    background-image: linear-gradient(45deg,#00ffff, #dd71f3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.slideshow{
+    width: 50%;
+    height: 30%;
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    background-color: rgba(255, 255, 255, 0);
+    }
+
+.slide{
+    display: none;
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    background-color: rgb(255, 255, 255);
+}
+
+img{
+    width: 100%;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    
+  }
+  
+.previous, .next{
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Fredoka', sans-serif;
+  position: absolute;
+  top: 45%;
+  width: 5%;
+ 
+
+}
+
+.slideButton{
+  color: rgb(35, 35, 35);
+    box-shadow: 1px 1px 15px rgba(255, 255, 255, 0.518);
+    font-family: 'Fredoka', sans-serif;
+    font-size: 18px;
+    line-height: 36px;
+    background-color: rgb(35, 35, 35);
+    border: 0px;
+    border-radius: 6px;
+    width: 15%;
+    height: 2em;
+    transition: 0.3s;
+    text-align: center;
+    cursor: pointer;
+}
+
+.slideButton:hover{
+  transition: .25sec;
+  background-color: rgb(195, 158, 158);
+  color: rgb(255, 219, 219);
+  box-shadow: none;
+}
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .previous:hover, .next:hover {
+    background-color: rgba(78, 78, 78, 0.8);
+    border-radius: 5px;
+  }
+  
+  /* Caption text */
+  .text {
+    font-family: 'Fredoka', sans-serif;
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    font-family: 'Fredoka', sans-serif;
+    text-align: center;
+    color: #f2f2f2;
+    width: 10%;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    top: -15%;
+    left: 45%;
+  }
+  
+
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 5000s;
+  }
+  
+  @keyframes fade {
+    0% {opacity: .4}
+    .05% {opacity: 1}
+    100% {opacity: 1}
+  }
+
+
+  .thingImage{
+      position: absolute;
+      left: 10%;
+      width: 80%;
+  }

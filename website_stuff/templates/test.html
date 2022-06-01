@@ -1,0 +1,42 @@
+<html>
+   <head>
+      <title>ML Test</title>
+      <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="{{ url_for('static', filename='test.css') }}">
+
+   </head>
+   <body>
+      <form style="height: 30%;  top: 50%; left:65%; width:20%; position:absolute; background-color:rgba(255, 255, 255, 0);" action="/runML" method = "POST" 
+         enctype = "multipart/form-data" id="img_form">
+         <input style="background-color: white; position: absolute; width: 80%; left: 10%; top: 0%"  type = "file" name = "file" id="file" title=" " onchange="loadFile(event)"/>
+         <input style="top: 20%; width: 40%; left: 30%; position: absolute;" class="submitButton" type = "submit"/>
+      </form> 
+      
+      <img class="mlImage" id="output" width="200" />
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+         messages %} 
+         <img class="mlImage" id="picture" src="data:image/jpeg;base64,{{ img_data }}">
+         {% for category, message in messages %}  
+           <h1 style="color: white;">{{ message }}  </h1>       
+      {% endfor %} 
+      {% endif %} 
+      {% endwith %}
+
+
+      <script>
+         var image2 = document.getElementById('picture');
+         var image = document.getElementById('output');
+         var loadFile = function(event) {
+             if(image2 != null) image2.style.visibility = "hidden";
+
+             image.src = URL.createObjectURL(event.target.files[0]);
+           
+           };
+   
+   
+   
+     
+   
+         </script>  
+   </body>
+</html>

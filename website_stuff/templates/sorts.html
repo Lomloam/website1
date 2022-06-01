@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Sorts</title>
+       
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='sorts.css') }}"></head>
+    
+    <body>
+        <canvas  id="canvas"></canvas>
+         <!--back button-->    
+         <a href="/">
+            <div id="back" class="btn btn-three" style="text-align: center; left: 20px;  line-height: 35px; height: 35; width: 110;">
+             Back  
+         </div> </a>
+           <!--start button-->
+           <div id="start" class="btn btn-three" style=" top: 5%; line-height: 50px; height: 50; width: 150; left: 3%;">
+            Start  
+        </div>
+         <!--Dropdown(just a test for now, no actual selections)-->
+       <div class="dropdown" style="position: absolute; left: .1%; top: 18%;">
+        <button id="dropButton" class="dropbtn">Sort Type</button>
+        <div id="droppa" class="dropdown-content">
+              <option id="option1" value="selection">Selection Sort</option>
+              <option id="option2" value="bubble">Bubble Sort</option>
+              <option id="option3" value="3">Stuff</option>     
+        </div>
+      </div>  
+
+
+      <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='sorts.js') }}"></script>
+    </body>
+</html>
+
+

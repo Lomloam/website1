@@ -1,0 +1,16 @@
+import os
+import cv2
+import keras.models
+
+
+class_names = ["Honda", "Husqvarna", "Kawasaki", "Ktm", "Suzuki", "Yamaha"]
+
+def prepare(filepath):
+    IMG_SIZE = 128  # 50 in txt-based
+    img_array = cv2.imread(filepath)  # read in the image, convert to grayscale
+    new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))  # resize image to match model's expected sizing
+    return new_array.reshape(-1, IMG_SIZE, IMG_SIZE, 3)  # return the image with shaping that TF wants.
+
+
+prediction = model.predict([prepare('pics/sound.png')])  # REMEMBER YOU'RE PASSING A LIST OF THINGS YOU WISH TO PREDICT
+print(class_names[int(prediction[0][0])])
